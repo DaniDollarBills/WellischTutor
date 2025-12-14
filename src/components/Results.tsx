@@ -1,0 +1,231 @@
+import { TrendingUp, Target, Clock, Award, ArrowUpRight, CheckCircle, MessageCircle, Zap } from "lucide-react";
+
+const Results = () => {
+  const mainStats = [
+    {
+      value: "+18%",
+      label: "Average Test Score Improvement",
+      description: "Typical gains within the first marking period",
+    },
+    {
+      value: "2+",
+      label: "Letter Grades Improved",
+      description: "Average improvement with consistent tutoring",
+    },
+    {
+      value: "95%",
+      label: "Student Satisfaction",
+      description: "Students and parents happy with their progress",
+    },
+  ];
+
+  const timeline = [
+    {
+      week: "Week 1-2",
+      title: "Foundation & Quick Wins",
+      description: "Identify gaps, build confidence with immediate improvements on homework and quizzes",
+      improvement: "+5-10% on assignments",
+    },
+    {
+      week: "Week 3-4",
+      title: "Building Understanding",
+      description: "Deep concept mastery, better test preparation, developing study habits",
+      improvement: "+15% on tests",
+    },
+    {
+      week: "Month 2-3",
+      title: "Transformation",
+      description: "Full grade level improvement, independent problem-solving skills",
+      improvement: "+1 letter grade",
+    },
+    {
+      week: "Ongoing",
+      title: "Excellence & Habit Building",
+      description: "Maintain A/B grades, tackle advanced concepts, lifelong math confidence",
+      improvement: "+2 letter grades",
+    },
+  ];
+
+  const beforeAfter = [
+    { subject: "Pre-Algebra", before: "D", after: "A-", weeks: "10 weeks", improvement: "+3 grades" },
+    { subject: "Algebra I", before: "C-", after: "A", weeks: "12 weeks", improvement: "+3 grades" },
+    { subject: "Geometry", before: "D+", after: "B+", weeks: "8 weeks", improvement: "+2 grades" },
+    { subject: "Algebra II", before: "C", after: "A", weeks: "14 weeks", improvement: "+2 grades" },
+  ];
+
+  const features = [
+    {
+      icon: Zap,
+      title: "Quick Wins First",
+      description: "See improvement on your next assignment, not months from now",
+    },
+    {
+      icon: TrendingUp,
+      title: "Lasting Transformation",
+      description: "We build habits and understanding that stick for life",
+    },
+    {
+      icon: MessageCircle,
+      title: "Ongoing Support",
+      description: "Text or message anytime for help between sessions",
+    },
+    {
+      icon: Award,
+      title: "Proven Results",
+      description: "Track record of helping students succeed",
+    },
+  ];
+
+  return (
+    <section id="results" className="py-20 lg:py-28 bg-background">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <p className="text-gold font-medium text-sm uppercase tracking-wider mb-3">
+            Proven Results
+          </p>
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-foreground mb-4">
+            Real Data, Real Results
+          </h2>
+          <p className="text-muted-foreground text-lg">
+            See what's possible with dedicated, personalized tutoring.
+          </p>
+        </div>
+
+        {/* Main Stats */}
+        <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto mb-20">
+          {mainStats.map((stat) => (
+            <div
+              key={stat.label}
+              className="text-center p-8 bg-card rounded-2xl shadow-card border border-border/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+            >
+              <div className="font-serif text-5xl lg:text-6xl text-gold mb-3">
+                {stat.value}
+              </div>
+              <div className="font-semibold text-foreground text-lg mb-2">
+                {stat.label}
+              </div>
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                {stat.description}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* Timeline Section */}
+        <div className="max-w-4xl mx-auto mb-20">
+          <h3 className="font-serif text-2xl text-foreground text-center mb-10">
+            Your Journey to Better Grades
+          </h3>
+          <div className="relative">
+            {/* Timeline line */}
+            <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gold/30 transform md:-translate-x-1/2" />
+            
+            {timeline.map((item, index) => (
+              <div 
+                key={item.week}
+                className={`relative flex flex-col md:flex-row gap-8 mb-12 last:mb-0 ${
+                  index % 2 === 0 ? 'md:flex-row-reverse' : ''
+                }`}
+              >
+                {/* Timeline dot */}
+                <div className="absolute left-0 md:left-1/2 w-4 h-4 bg-gold rounded-full transform -translate-x-1/2 mt-1.5 z-10" />
+                
+                {/* Content */}
+                <div className={`ml-8 md:ml-0 md:w-1/2 ${index % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12'}`}>
+                  <span className="inline-block bg-gold/10 text-gold text-xs font-semibold px-3 py-1 rounded-full mb-2">
+                    {item.week}
+                  </span>
+                  <h4 className="font-serif text-xl text-foreground mb-2">{item.title}</h4>
+                  <p className="text-muted-foreground text-sm mb-2">{item.description}</p>
+                  <span className="inline-flex items-center gap-1 text-green-600 font-semibold text-sm">
+                    <ArrowUpRight className="w-4 h-4" />
+                    {item.improvement}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Before/After Table */}
+        <div className="max-w-4xl mx-auto mb-20">
+          <h3 className="font-serif text-2xl text-foreground text-center mb-8">
+            Sample Student Transformations
+          </h3>
+          <div className="bg-card rounded-2xl shadow-card border border-border/50 overflow-hidden">
+            <div className="grid grid-cols-5 gap-4 p-4 bg-navy/5 font-semibold text-sm text-foreground">
+              <div>Subject</div>
+              <div className="text-center">Before</div>
+              <div className="text-center">After</div>
+              <div className="text-center">Timeline</div>
+              <div className="text-center">Change</div>
+            </div>
+            {beforeAfter.map((row, index) => (
+              <div 
+                key={row.subject}
+                className={`grid grid-cols-5 gap-4 p-4 items-center transition-all duration-300 hover:bg-gold/5 ${
+                  index !== beforeAfter.length - 1 ? 'border-b border-border/50' : ''
+                }`}
+              >
+                <div className="font-medium text-foreground">{row.subject}</div>
+                <div className="text-center">
+                  <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-red-100 text-red-600 font-bold text-sm">
+                    {row.before}
+                  </span>
+                </div>
+                <div className="text-center">
+                  <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-green-100 text-green-600 font-bold text-sm">
+                    {row.after}
+                  </span>
+                </div>
+                <div className="text-center text-muted-foreground text-sm">
+                  {row.weeks}
+                </div>
+                <div className="text-center">
+                  <span className="inline-flex items-center gap-1 text-green-600 font-bold text-sm">
+                    <ArrowUpRight className="w-4 h-4" />
+                    {row.improvement}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="text-center text-muted-foreground text-sm mt-4">
+            *Representative examples based on student outcomes
+          </p>
+        </div>
+
+        {/* Feature Cards */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          {features.map((item) => (
+            <div
+              key={item.title}
+              className="p-6 bg-subtle rounded-xl border border-border/50 transition-all duration-300 hover:shadow-md hover:-translate-y-1"
+            >
+              <div className="w-12 h-12 bg-gold/10 rounded-lg mb-4 flex items-center justify-center">
+                <item.icon className="w-6 h-6 text-gold" />
+              </div>
+              <h4 className="font-semibold text-foreground mb-2">{item.title}</h4>
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                {item.description}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="text-center mt-16">
+          <div className="inline-flex items-center gap-3 bg-green-500/10 rounded-full px-6 py-3 border border-green-500/20">
+            <CheckCircle className="w-5 h-5 text-green-500" />
+            <span className="text-foreground font-medium">
+              Join the students already seeing results
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Results;

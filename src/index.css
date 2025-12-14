@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Summit Academic Group - Professional Academic Palette */
+    --background: 210 20% 98%;
+    --foreground: 220 30% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 30% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 30% 15%;
+
+    /* Navy Primary */
+    --primary: 220 60% 20%;
+    --primary-foreground: 210 40% 98%;
+
+    /* Warm Stone Secondary */
+    --secondary: 30 15% 94%;
+    --secondary-foreground: 220 30% 20%;
+
+    /* Slate Muted */
+    --muted: 220 15% 92%;
+    --muted-foreground: 220 15% 45%;
+
+    /* Gold Accent */
+    --accent: 38 65% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 20% 88%;
+    --input: 220 20% 88%;
+    --ring: 220 60% 20%;
+
+    --radius: 0.5rem;
+
+    /* Custom tokens */
+    --navy: 220 60% 20%;
+    --navy-light: 220 45% 30%;
+    --charcoal: 220 20% 25%;
+    --gold: 38 65% 50%;
+    --gold-light: 38 60% 60%;
+    --cream: 40 30% 96%;
+    --slate: 220 15% 55%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(220 60% 20%) 0%, hsl(220 45% 30%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(38 65% 50%) 0%, hsl(38 60% 60%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(210 20% 98%) 0%, hsl(220 15% 95%) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(220 20% 25% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(220 20% 25% / 0.08), 0 2px 4px -2px hsl(220 20% 25% / 0.05);
+    --shadow-lg: 0 10px 15px -3px hsl(220 20% 25% / 0.1), 0 4px 6px -4px hsl(220 20% 25% / 0.05);
+    --shadow-card: 0 4px 24px -4px hsl(220 60% 20% / 0.08);
+    --shadow-glow: 0 0 40px hsl(38 65% 50% / 0.15);
+
+    /* Typography */
+    --font-serif: 'DM Serif Display', Georgia, serif;
+    --font-sans: 'Inter', system-ui, sans-serif;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 30% 8%;
+    --foreground: 210 40% 95%;
+
+    --card: 220 25% 12%;
+    --card-foreground: 210 40% 95%;
+
+    --popover: 220 25% 12%;
+    --popover-foreground: 210 40% 95%;
+
+    --primary: 38 65% 55%;
+    --primary-foreground: 220 30% 10%;
+
+    --secondary: 220 20% 18%;
+    --secondary-foreground: 210 40% 95%;
+
+    --muted: 220 20% 18%;
+    --muted-foreground: 220 15% 60%;
+
+    --accent: 38 65% 55%;
+    --accent-foreground: 220 30% 10%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 20% 20%;
+    --input: 220 20% 20%;
+    --ring: 38 65% 55%;
+
+    --navy: 220 45% 35%;
+    --navy-light: 220 40% 45%;
+    --charcoal: 220 20% 75%;
+    --gold: 38 65% 55%;
+    --gold-light: 38 60% 65%;
+    --cream: 220 20% 15%;
+    --slate: 220 15% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+  }
+}
+
+@layer components {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-gold);
+  }
+
+  .bg-hero {
+    background: var(--gradient-hero);
+  }
+
+  .bg-subtle {
+    background: var(--gradient-subtle);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  .animate-fade-up-delay-1 {
+    animation: fadeUp 0.6s ease-out 0.1s forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-up-delay-2 {
+    animation: fadeUp 0.6s ease-out 0.2s forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-up-delay-3 {
+    animation: fadeUp 0.6s ease-out 0.3s forwards;
+    opacity: 0;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .hover-lift:hover {
+    @apply -translate-y-1;
+    box-shadow: var(--shadow-lg);
+  }
+}
