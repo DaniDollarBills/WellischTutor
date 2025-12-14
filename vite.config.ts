@@ -19,8 +19,8 @@ export default defineConfig(({ mode }) => ({
     },
   },
 
-  // 👇 ADDITIONS FOR GITHUB PAGES
-  base: "/",
+  // ✅ REQUIRED for GitHub Pages project sites
+  base: "/WellischTutor/",
   build: {
     outDir: "docs",
   },
