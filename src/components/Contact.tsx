@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, ArrowRight, TrendingUp, CheckCircle } from "lucide-react";
+import { DollarSign, Mail, Phone, MapPin, ArrowRight, TrendingUp, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
@@ -142,6 +142,19 @@ ${formData.message}
                   <p className="text-muted-foreground">
                     Westchester County, NY<br />
                     <span className="text-sm">In-home & online sessions available</span>
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4 transition-all duration-300 hover:translate-x-1">
+                <div className="w-12 h-12 bg-navy/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <DollarSign className="w-5 h-5 text-navy" />
+                </div>
+                <div>
+                  <p className="font-medium text-foreground">Pricing</p>
+                  <p className="text-muted-foreground">
+                    Billed on a case-by-case basis<br />
+                    <span className="text-sm">Inquire for pricing tailored to your student's needs</span>
                   </p>
                 </div>
               </div>

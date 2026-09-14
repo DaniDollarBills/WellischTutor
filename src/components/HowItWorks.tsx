@@ -5,7 +5,7 @@ const steps = [
     number: "01",
     icon: MessageSquare,
     title: "Get in Touch",
-    description: "Reach out and tell us about your student's goals, current challenges, and schedule. We'll find the right approach for your student.",
+    description: "Reach out and tell us about your student's goals, current challenges, and schedule. We'll find the right approach for your student. Pricing is handled case by case, so just ask.",
   },
   {
     number: "02",
